@@ -1,8 +1,11 @@
 import { Box, Flex,chakra, Image } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 
 function Card({ data }) {
+
+
   return (
+    <>
     <div>
       {
         <Flex
@@ -45,17 +48,18 @@ function Card({ data }) {
                   color: "gray.400",
                 }}
               >
-                {data.description[0]}
+                {data.feature[0]}
               </chakra.p>
             </Box>
 
             <Image
-              h={48}
+              h="full"
               w="full"
               fit="cover"
               mt={2}
               src={data.images.large.url}
             />
+            {/* <chakra.p onClick={toggleToggle} cursor={"pointer"} color="blue.400" p={"4px 10px"}>view more</chakra.p> */}
 
             <Flex
               alignItems="center"
@@ -91,6 +95,8 @@ function Card({ data }) {
         </Flex>
       }
     </div>
+    </>
+
   );
 }
 
